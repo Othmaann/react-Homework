@@ -3,18 +3,19 @@ import React from "react";
 export default class Deposit extends React.Component {
   inputDepositAmount = 0;
   total = 0;
-  getDespoitAmount = (e) => {
-    this.inputDepositAmount = parseInt(e.target.value);
+  getDespoitAmount = (event) => {
+    this.inputDepositAmount = parseInt(event.target.value);
   };
 
-  onSubmitHandel = (e) => {
-    e.preventDefault();
+  onSubmitHandel = (event) => {
+    event.preventDefault();
     this.total = this.total + this.inputDepositAmount;
     this.props.getTotalNumber(this.total);
   };
   render() {
     return (
       <form required className="myForm" onSubmit={this.onSubmitHandel}>
+         <h1> Deposit </h1>
         <input
           required
           placeholder="desposit amount:"
